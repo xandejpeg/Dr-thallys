@@ -615,80 +615,59 @@
         <!-- Contato Section -->
         <section class="contato section" id="contato">
             <div class="container">
-                <div class="contato__compact">
+                <div class="contato__grid">
                     <!-- Info Side -->
-                    <div class="contato__info-side" data-aos="fade-right">
+                    <div class="contato__info" data-aos="fade-right">
                         <span class="section__tag">Contato</span>
-                        <h2 class="section__title">Venha nos<br>Conhecer</h2>
+                        <h2 class="section__title">Localização</h2>
                         
                         <div class="contato__cards">
-                            <!-- Location Card with Actions -->
-                            <div class="contato__card contato__card--location">
-                                <div class="contato__card-main">
-                                    <div class="contato__card-icon">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="contato__card-text">
-                                        <h4>Localização</h4>
-                                        <p id="endereco-completo">Centro Médico Dr. Walter Bernardina, Colatina - ES</p>
-                                    </div>
+                            <div class="contato__card">
+                                <div class="contato__card-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
-                                <div class="contato__card-actions">
-                                    <button class="contato__action-btn" onclick="copiarEndereco()" id="btn-copiar">
-                                        <i class="fas fa-copy"></i>
-                                        <span>Copiar Endereço</span>
-                                    </button>
-                                    <a href="https://waze.com/ul?q=Centro%20M%C3%A9dico%20Dr.%20Walter%20Bernardina%20Colatina%20ES&navigate=yes" target="_blank" class="contato__action-btn contato__action-btn--waze">
-                                        <i class="fab fa-waze"></i>
-                                        <span>Abrir no Waze</span>
-                                    </a>
+                                <div class="contato__card-text">
+                                    <h4>Endereço</h4>
+                                    <p>Centro Médico Dr. Walter Bernardina</p>
+                                    <p>Colatina - ES</p>
                                 </div>
                             </div>
 
-                            <!-- Schedule Card -->
                             <div class="contato__card">
                                 <div class="contato__card-icon">
                                     <i class="fas fa-clock"></i>
                                 </div>
                                 <div class="contato__card-text">
                                     <h4>Horários</h4>
-                                    <p>Seg, Qua, Qui e Sex • <strong>7h às 17h</strong></p>
+                                    <p>Seg, Qua, Qui e Sex</p>
+                                    <p><strong>7h às 17h</strong></p>
                                 </div>
                             </div>
 
-                            <!-- Payment Card -->
                             <div class="contato__card">
                                 <div class="contato__card-icon">
                                     <i class="fas fa-credit-card"></i>
                                 </div>
                                 <div class="contato__card-text">
                                     <h4>Atendimento</h4>
-                                    <p>Particular • Não atende convênios</p>
+                                    <p>Particular</p>
+                                    <p class="text-muted">Não atende convênios</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- CTA Side -->
-                    <div class="contato__cta-side" data-aos="fade-left">
-                        <div class="contato__cta-card">
-                            <div class="contato__cta-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <h3>Agende sua Consulta</h3>
-                            <p>Fale diretamente conosco pelo WhatsApp e agende seu atendimento de forma rápida e prática.</p>
-                            <div class="contato__cta-phone">
-                                <span>+55 27 99861-8276</span>
-                            </div>
-                            <a href="https://wa.me/5527998618276?text=Olá! Gostaria de agendar uma consulta." target="_blank" class="contato__cta-btn">
-                                <i class="fab fa-whatsapp"></i>
-                                Iniciar Conversa
-                            </a>
-                            <p class="contato__cta-note">
-                                <i class="fas fa-check-circle"></i>
-                                Resposta em até 2 horas
-                            </p>
-                        </div>
+                    <!-- Map Side -->
+                    <div class="contato__map" data-aos="fade-left">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.897!2d-40.6306!3d-19.5392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb5c86d4e4ed8a7%3A0x1234567890!2sCentro%20M%C3%A9dico%20Dr.%20Walter%20Bernardina!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
