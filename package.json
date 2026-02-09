@@ -1,0 +1,12 @@
+{
+  "name": "dr-thallys-site",
+  "version": "1.0.0",
+  "description": "Site institucional Dr. Thallys Henrique Alves",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
