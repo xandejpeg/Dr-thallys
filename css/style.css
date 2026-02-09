@@ -393,10 +393,12 @@ p:last-child {
     height: 50px;
     width: auto;
     transition: all var(--transition-fast);
+    filter: brightness(0) invert(1);
 }
 
 .header.scrolled .nav__logo img {
     height: 45px;
+    filter: none;
 }
 
 .nav__menu {
