@@ -622,15 +622,26 @@
                         <h2 class="section__title">Localização</h2>
                         
                         <div class="contato__cards">
-                            <div class="contato__card">
+                            <div class="contato__card contato__card--location">
                                 <div class="contato__card-icon">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div class="contato__card-text">
                                     <h4>Endereço</h4>
-                                    <p>Centro Médico Dr. Walter Bernardina</p>
-                                    <p>Colatina - ES</p>
+                                    <p id="endereco-completo">Centro Médico Dr. Walter Bernardina, Colatina - ES</p>
                                 </div>
+                            </div>
+                            
+                            <!-- Botões de Ação -->
+                            <div class="contato__actions">
+                                <button class="contato__action-btn" onclick="copiarEndereco()" id="btn-copiar">
+                                    <i class="fas fa-copy"></i>
+                                    <span>Copiar Endereço</span>
+                                </button>
+                                <a href="https://waze.com/ul?q=Centro%20M%C3%A9dico%20Dr.%20Walter%20Bernardina%20Colatina%20ES&navigate=yes" target="_blank" class="contato__action-btn contato__action-btn--waze">
+                                    <i class="fab fa-waze"></i>
+                                    <span>Abrir no Waze</span>
+                                </a>
                             </div>
 
                             <div class="contato__card">
@@ -660,7 +671,7 @@
                     <!-- Map Side -->
                     <div class="contato__map" data-aos="fade-left">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.897!2d-40.6306!3d-19.5392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb5c86d4e4ed8a7%3A0x1234567890!2sCentro%20M%C3%A9dico%20Dr.%20Walter%20Bernardina!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+                            src="https://maps.google.com/maps?q=Ortotrauma+Especialidades+Colatina+ES&t=&z=15&ie=UTF8&iwloc=&output=embed"
                             width="100%" 
                             height="100%" 
                             style="border:0;" 

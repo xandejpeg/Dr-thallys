@@ -1445,6 +1445,61 @@ p:last-child {
     line-height: 1.5;
 }
 
+.contato__card--location {
+    background: linear-gradient(135deg, var(--primary-lighter) 0%, var(--white) 100%);
+    border-color: var(--primary-lighter);
+}
+
+.contato__card--location .contato__card-icon {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.contato__actions {
+    display: flex;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-4);
+}
+
+.contato__action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3) var(--spacing-4);
+    background: var(--white);
+    border: 2px solid var(--primary);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.contato__action-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.contato__action-btn.copied {
+    background: var(--success);
+    border-color: var(--success);
+    color: var(--white);
+}
+
+.contato__action-btn--waze {
+    background: #33ccff;
+    border-color: #33ccff;
+    color: var(--white);
+}
+
+.contato__action-btn--waze:hover {
+    background: #00aadd;
+    border-color: #00aadd;
+}
+
 .contato__map {
     border-radius: var(--radius-xl);
     overflow: hidden;
