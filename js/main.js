@@ -401,3 +401,40 @@ function initParallax() {
    ============================================ */
 console.log('%c Dr. Thallys Henrique Alves ', 'background: #1a4d3e; color: #fff; font-size: 16px; padding: 10px 20px; border-radius: 5px;');
 console.log('%c Medicina do Esporte | Saúde Metabólica | Performance ', 'color: #1a4d3e; font-size: 12px;');
+
+/* ============================================
+   COPIAR ENDEREÇO
+   ============================================ */
+function copiarEndereco() {
+    const endereco = document.getElementById('endereco-completo').innerText;
+    const btn = document.getElementById('btn-copiar');
+    
+    navigator.clipboard.writeText(endereco).then(function() {
+        // Feedback visual
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i><span>Copiado!</span>';
+        btn.classList.add('copied');
+        
+        setTimeout(function() {
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('copied');
+        }, 2000);
+    }).catch(function(err) {
+        // Fallback para navegadores antigos
+        const textArea = document.createElement('textarea');
+        textArea.value = endereco;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i><span>Copiado!</span>';
+        btn.classList.add('copied');
+        
+        setTimeout(function() {
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('copied');
+        }, 2000);
+    });
+}

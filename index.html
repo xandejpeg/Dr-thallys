@@ -619,94 +619,79 @@
         <!-- Contato Section -->
         <section class="contato section" id="contato">
             <div class="container">
-                <div class="section__header" data-aos="fade-up">
-                    <span class="section__tag">Contato</span>
-                    <h2 class="section__title">Localização &<br>Informações</h2>
-                    <p class="section__subtitle">Tudo o que você precisa saber para sua consulta</p>
-                </div>
+                <div class="contato__compact">
+                    <!-- Info Side -->
+                    <div class="contato__info-side" data-aos="fade-right">
+                        <span class="section__tag">Contato</span>
+                        <h2 class="section__title">Venha nos<br>Conhecer</h2>
+                        
+                        <div class="contato__cards">
+                            <!-- Location Card with Actions -->
+                            <div class="contato__card contato__card--location">
+                                <div class="contato__card-main">
+                                    <div class="contato__card-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contato__card-text">
+                                        <h4>Localização</h4>
+                                        <p id="endereco-completo">Centro Médico Dr. Walter Bernardina, Colatina - ES</p>
+                                    </div>
+                                </div>
+                                <div class="contato__card-actions">
+                                    <button class="contato__action-btn" onclick="copiarEndereco()" id="btn-copiar">
+                                        <i class="fas fa-copy"></i>
+                                        <span>Copiar Endereço</span>
+                                    </button>
+                                    <a href="https://waze.com/ul?q=Centro%20M%C3%A9dico%20Dr.%20Walter%20Bernardina%20Colatina%20ES&navigate=yes" target="_blank" class="contato__action-btn contato__action-btn--waze">
+                                        <i class="fab fa-waze"></i>
+                                        <span>Abrir no Waze</span>
+                                    </a>
+                                </div>
+                            </div>
 
-                <div class="contato__wrapper">
-                    <!-- Info Cards -->
-                    <div class="contato__info-grid" data-aos="fade-up" data-aos-delay="100">
-                        <div class="contato__info-card contato__info-card--highlight">
-                            <div class="contato__info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+                            <!-- Schedule Card -->
+                            <div class="contato__card">
+                                <div class="contato__card-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contato__card-text">
+                                    <h4>Horários</h4>
+                                    <p>Seg, Qua, Qui e Sex • <strong>7h às 17h</strong></p>
+                                </div>
                             </div>
-                            <div class="contato__info-content">
-                                <h4>Localização</h4>
-                                <p class="contato__info-main">Centro Médico Dr. Walter Bernardina</p>
-                                <p class="contato__info-sub">Colatina – Espírito Santo</p>
-                            </div>
-                            <a href="https://maps.google.com/?q=Colatina,ES" target="_blank" class="contato__info-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
 
-                        <div class="contato__info-card">
-                            <div class="contato__info-icon">
-                                <i class="fas fa-clock"></i>
+                            <!-- Payment Card -->
+                            <div class="contato__card">
+                                <div class="contato__card-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="contato__card-text">
+                                    <h4>Atendimento</h4>
+                                    <p>Particular • Não atende convênios</p>
+                                </div>
                             </div>
-                            <div class="contato__info-content">
-                                <h4>Horários de Atendimento</h4>
-                                <p class="contato__info-main">Seg, Qua, Qui e Sex</p>
-                                <p class="contato__info-sub"><strong>7h às 17h</strong></p>
-                            </div>
-                        </div>
-
-                        <div class="contato__info-card">
-                            <div class="contato__info-icon">
-                                <i class="fas fa-credit-card"></i>
-                            </div>
-                            <div class="contato__info-content">
-                                <h4>Modalidade</h4>
-                                <p class="contato__info-main">Atendimento Particular</p>
-                                <p class="contato__info-sub">Não atende convênios</p>
-                            </div>
-                        </div>
-
-                        <div class="contato__info-card contato__info-card--cta">
-                            <div class="contato__info-icon contato__info-icon--whatsapp">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="contato__info-content">
-                                <h4>WhatsApp</h4>
-                                <p class="contato__info-main">+55 27 99861-8276</p>
-                                <p class="contato__info-sub">Agende sua consulta</p>
-                            </div>
-                            <a href="https://wa.me/5527998618276?text=Olá! Gostaria de agendar uma consulta." target="_blank" class="contato__info-btn">
-                                Agendar <i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
                     </div>
 
-                    <!-- Map Container -->
-                    <div class="contato__map-container" data-aos="fade-up" data-aos-delay="200">
-                        <div class="contato__map-wrapper">
-                            <div class="contato__map-header">
-                                <div class="contato__map-dots">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                                <span class="contato__map-title">
-                                    <i class="fas fa-map-pin"></i>
-                                    Nossa Localização
-                                </span>
+                    <!-- CTA Side -->
+                    <div class="contato__cta-side" data-aos="fade-left">
+                        <div class="contato__cta-card">
+                            <div class="contato__cta-icon">
+                                <i class="fab fa-whatsapp"></i>
                             </div>
-                            <div class="contato__map">
-                                <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.123456789!2d-40.6267!3d-19.5394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sColatina%2C%20ES!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-                                    width="100%" 
-                                    height="100%" 
-                                    style="border:0;" 
-                                    allowfullscreen="" 
-                                    loading="lazy">
-                                </iframe>
+                            <h3>Agende sua Consulta</h3>
+                            <p>Fale diretamente conosco pelo WhatsApp e agende seu atendimento de forma rápida e prática.</p>
+                            <div class="contato__cta-phone">
+                                <span>+55 27 99861-8276</span>
                             </div>
-                        </div>
-                        <div class="contato__map-badge">
-                            <i class="fas fa-car"></i>
-                            <span>Estacionamento disponível no local</span>
+                            <a href="https://wa.me/5527998618276?text=Olá! Gostaria de agendar uma consulta." target="_blank" class="contato__cta-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                Iniciar Conversa
+                            </a>
+                            <p class="contato__cta-note">
+                                <i class="fas fa-check-circle"></i>
+                                Resposta em até 2 horas
+                            </p>
                         </div>
                     </div>
                 </div>
