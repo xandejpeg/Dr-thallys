@@ -1457,8 +1457,8 @@ p:last-child {
 
 .contato__actions {
     display: flex;
-    gap: var(--spacing-3);
-    margin-bottom: var(--spacing-4);
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-5);
 }
 
 .contato__action-btn {
@@ -1466,38 +1466,70 @@ p:last-child {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-2);
-    padding: var(--spacing-3) var(--spacing-4);
-    background: var(--white);
+    gap: var(--spacing-3);
+    padding: var(--spacing-4) var(--spacing-5);
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
     border: 2px solid var(--primary);
-    border-radius: var(--radius-md);
-    font-size: var(--text-sm);
-    font-weight: 600;
+    border-radius: var(--radius-xl);
+    font-size: var(--text-base);
+    font-weight: 700;
     color: var(--primary);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.contato__action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.contato__action-btn:hover::before {
+    left: 100%;
+}
+
+.contato__action-btn i {
+    font-size: 1.2em;
 }
 
 .contato__action-btn:hover {
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(26, 90, 60, 0.35);
+}
+
+.contato__action-btn:active {
+    transform: translateY(-1px);
 }
 
 .contato__action-btn.copied {
-    background: var(--success);
+    background: linear-gradient(135deg, var(--success) 0%, #218838 100%);
     border-color: var(--success);
     color: var(--white);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.35);
 }
 
 .contato__action-btn--waze {
-    background: #33ccff;
+    background: linear-gradient(135deg, #33ccff 0%, #00aadd 100%);
     border-color: #33ccff;
     color: var(--white);
+    box-shadow: 0 4px 15px rgba(51, 204, 255, 0.3);
 }
 
 .contato__action-btn--waze:hover {
-    background: #00aadd;
+    background: linear-gradient(135deg, #00aadd 0%, #0088bb 100%);
     border-color: #00aadd;
+    box-shadow: 0 8px 25px rgba(0, 170, 221, 0.45);
 }
 
 .contato__map {
@@ -1534,6 +1566,7 @@ p:last-child {
     height: 70px;
     width: auto;
     margin-bottom: var(--spacing-4);
+    filter: brightness(1.4) saturate(1.5);
 }
 
 .footer__tagline {
