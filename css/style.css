@@ -323,8 +323,8 @@ em { font-style: italic; }
     position: relative;
     min-height: 100vh;
     display: flex;
-    align-items: flex-end;
-    padding-bottom: 80px;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 .hero__bg {
@@ -355,6 +355,8 @@ em { font-style: italic; }
     z-index: 2;
     color: var(--white);
     max-width: 720px;
+    text-align: center;
+    margin: 0 auto;
 }
 .hero__tag {
     font-size: var(--text-sm);
@@ -378,13 +380,14 @@ em { font-style: italic; }
     font-size: var(--text-lg);
     color: rgba(255,255,255,.7);
     max-width: 520px;
-    margin-bottom: 36px;
+    margin: 0 auto 36px;
     line-height: 1.7;
 }
 .hero__actions {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    justify-content: center;
 }
 
 /* Scroll indicator */
@@ -1192,8 +1195,8 @@ em { font-style: italic; }
     /* Mobile Hero */
     .hero {
         min-height: 100svh;
-        align-items: flex-end;
-        padding-bottom: 48px;
+        align-items: center;
+        padding: 80px 0;
     }
     .hero__scroll { display: none; }
     .hero__actions { flex-direction: column; }
