@@ -620,55 +620,118 @@
         <!-- Contato Section -->
         <section class="contato section" id="contato">
             <div class="container">
+                <span class="section__tag" data-aos="fade-up">Contato</span>
+                <h2 class="section__title" data-aos="fade-up">Localização</h2>
+
+                <!-- Location Toggle -->
+                <div class="location-toggle" data-aos="fade-up">
+                    <button class="location-toggle__btn active" data-location="colatina" onclick="trocarLocal('colatina')">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Colatina
+                    </button>
+                    <button class="location-toggle__btn" data-location="vitoria" onclick="trocarLocal('vitoria')">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Vitória
+                    </button>
+                </div>
+
                 <div class="contato__grid">
                     <!-- Info Side -->
                     <div class="contato__info" data-aos="fade-right">
-                        <span class="section__tag">Contato</span>
-                        <h2 class="section__title">Localização</h2>
-                        
-                        <div class="contato__cards">
-                            <div class="contato__card contato__card--location">
-                                <div class="contato__card-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
+                        <!-- Colatina Panel -->
+                        <div class="location-panel active" id="panel-colatina">
+                            <div class="contato__cards">
+                                <div class="contato__card contato__card--location">
+                                    <div class="contato__card-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contato__card-text">
+                                        <h4>Endereço — Colatina</h4>
+                                        <p>Centro Médico Dr. Walter Bernardina</p>
+                                        <p class="endereco-texto" data-endereco="Av. Luiz Dalla Bernardina, 138 - Colatina, ES">Av. Luiz Dalla Bernardina, 138 - Colatina, ES</p>
+                                    </div>
                                 </div>
-                                <div class="contato__card-text">
-                                    <h4>Endereço</h4>
-                                    <p>Centro Médico Dr. Walter Bernardina</p>
-                                    <p id="endereco-completo">Av. Luiz Dalla Bernardina, 138 - Colatina, ES</p>
+                                
+                                <div class="contato__actions">
+                                    <button class="contato__action-btn btn-copiar" onclick="copiarEndereco(this)">
+                                        <i class="fas fa-copy"></i>
+                                        <span>Copiar Endereço</span>
+                                    </button>
+                                    <a href="https://waze.com/ul?q=Av.%20Luiz%20Dalla%20Bernardina%2C%20138%20Colatina%20ES&navigate=yes" target="_blank" rel="noopener noreferrer" class="contato__action-btn contato__action-btn--waze">
+                                        <i class="fab fa-waze"></i>
+                                        <span>Abrir no Waze</span>
+                                    </a>
                                 </div>
-                            </div>
-                            
-                            <!-- Botões de Ação -->
-                            <div class="contato__actions">
-                                <button class="contato__action-btn" onclick="copiarEndereco()" id="btn-copiar">
-                                    <i class="fas fa-copy"></i>
-                                    <span>Copiar Endereço</span>
-                                </button>
-                                <a href="https://waze.com/ul?q=Av.%20Luiz%20Dalla%20Bernardina%2C%20138%20Colatina%20ES&navigate=yes" target="_blank" class="contato__action-btn contato__action-btn--waze">
-                                    <i class="fab fa-waze"></i>
-                                    <span>Abrir no Waze</span>
-                                </a>
-                            </div>
 
-                            <div class="contato__card">
-                                <div class="contato__card-icon">
-                                    <i class="fas fa-clock"></i>
+                                <div class="contato__card">
+                                    <div class="contato__card-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="contato__card-text">
+                                        <h4>Horários</h4>
+                                        <p>Seg, Qua, Qui e Sex</p>
+                                        <p><strong>7h às 17h</strong></p>
+                                    </div>
                                 </div>
-                                <div class="contato__card-text">
-                                    <h4>Horários</h4>
-                                    <p>Seg, Qua, Qui e Sex</p>
-                                    <p><strong>7h às 17h</strong></p>
+
+                                <div class="contato__card">
+                                    <div class="contato__card-icon">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="contato__card-text">
+                                        <h4>Atendimento</h4>
+                                        <p>Particular</p>
+                                        <p class="text-muted">Não atende convênios</p>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="contato__card">
-                                <div class="contato__card-icon">
-                                    <i class="fas fa-credit-card"></i>
+                        <!-- Vitória Panel -->
+                        <div class="location-panel" id="panel-vitoria">
+                            <div class="contato__cards">
+                                <div class="contato__card contato__card--location">
+                                    <div class="contato__card-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contato__card-text">
+                                        <h4>Endereço — Vitória</h4>
+                                        <p>Oviva Consultórios</p>
+                                        <p class="endereco-texto" data-endereco="Av. Saturnino Rangel Mauro, 999 - Jardim da Penha, Vitória - ES, 29062-033">Av. Saturnino Rangel Mauro, 999 - Jardim da Penha, Vitória - ES, 29062-033</p>
+                                    </div>
                                 </div>
-                                <div class="contato__card-text">
-                                    <h4>Atendimento</h4>
-                                    <p>Particular</p>
-                                    <p class="text-muted">Não atende convênios</p>
+                                
+                                <div class="contato__actions">
+                                    <button class="contato__action-btn btn-copiar" onclick="copiarEndereco(this)">
+                                        <i class="fas fa-copy"></i>
+                                        <span>Copiar Endereço</span>
+                                    </button>
+                                    <a href="https://waze.com/ul?q=Av.%20Saturnino%20Rangel%20Mauro%2C%20999%20Jardim%20da%20Penha%20Vitoria%20ES&navigate=yes" target="_blank" rel="noopener noreferrer" class="contato__action-btn contato__action-btn--waze">
+                                        <i class="fab fa-waze"></i>
+                                        <span>Abrir no Waze</span>
+                                    </a>
+                                </div>
+
+                                <div class="contato__card">
+                                    <div class="contato__card-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="contato__card-text">
+                                        <h4>Horários</h4>
+                                        <p>Seg, Qua, Qui e Sex</p>
+                                        <p><strong>7h às 17h</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="contato__card">
+                                    <div class="contato__card-icon">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="contato__card-text">
+                                        <h4>Atendimento</h4>
+                                        <p>Particular</p>
+                                        <p class="text-muted">Não atende convênios</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -676,13 +739,14 @@
 
                     <!-- Map Side -->
                     <div class="contato__map" data-aos="fade-left">
-                        <iframe 
+                        <iframe id="map-colatina" class="location-map active"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.5!2d-40.6319027!3d-19.5383181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb7a827ce6d57b7%3A0x3c004e1285d1689a!2sWalter%20Bernardina%20Centro%20Medico!5e0!3m2!1spt-BR!2sbr"
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <iframe id="map-vitoria" class="location-map"
+                            src="https://www.google.com/maps?q=Oviva+Consultórios,+Av.+Saturnino+Rangel+Mauro,+999,+Jardim+da+Penha,+Vitória,+ES&output=embed"
+                            width="100%" height="100%" style="border:0; display:none;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
@@ -725,7 +789,7 @@
                         <li><i class="fas fa-user-md"></i> Atendimento particular</li>
                         <li><i class="fas fa-calendar"></i> Seg, Qua, Qui, Sex</li>
                         <li><i class="fas fa-clock"></i> 7h às 17h</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Colatina – ES</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Colatina – ES | Vitória – ES</li>
                     </ul>
                 </div>
                 
@@ -740,7 +804,7 @@
             
             <div class="footer__bottom">
                 <p>&copy; <span id="current-year"></span> Dr. Thallys Henrique Alves. Todos os direitos reservados.</p>
-                <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px; color: #999;">v 1.0.2</p>
+                <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px; color: #999;">v 1.0.3</p>
             </div>
         </div>
     </footer>

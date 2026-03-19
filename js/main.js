@@ -405,13 +405,13 @@ console.log('%c Medicina do Esporte | Saúde Metabólica | Performance ', 'color
 /* ============================================
    COPIAR ENDEREÇO
    ============================================ */
-function copiarEndereco() {
-    const endereco = document.getElementById('endereco-completo').innerText;
-    const btn = document.getElementById('btn-copiar');
+window.copiarEndereco = function(btn) {
+    var panel = btn.closest('.location-panel');
+    var enderecoEl = panel.querySelector('.endereco-texto');
+    var endereco = enderecoEl.getAttribute('data-endereco');
     
     navigator.clipboard.writeText(endereco).then(function() {
-        // Feedback visual
-        const originalHTML = btn.innerHTML;
+        var originalHTML = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-check"></i><span>Copiado!</span>';
         btn.classList.add('copied');
         
@@ -420,15 +420,14 @@ function copiarEndereco() {
             btn.classList.remove('copied');
         }, 2000);
     }).catch(function(err) {
-        // Fallback para navegadores antigos
-        const textArea = document.createElement('textarea');
+        var textArea = document.createElement('textarea');
         textArea.value = endereco;
         document.body.appendChild(textArea);
         textArea.select();
         document.execCommand('copy');
         document.body.removeChild(textArea);
         
-        const originalHTML = btn.innerHTML;
+        var originalHTML = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-check"></i><span>Copiado!</span>';
         btn.classList.add('copied');
         
@@ -437,4 +436,29 @@ function copiarEndereco() {
             btn.classList.remove('copied');
         }, 2000);
     });
-}
+};
+
+/* ============================================
+   TROCAR LOCALIZAÇÃO (COLATINA / VITÓRIA)
+   ============================================ */
+window.trocarLocal = function(local) {
+    // Toggle buttons
+    document.querySelectorAll('.location-toggle__btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-location') === local);
+    });
+    
+    // Toggle panels
+    document.querySelectorAll('.location-panel').forEach(function(panel) {
+        panel.classList.remove('active');
+    });
+    document.getElementById('panel-' + local).classList.add('active');
+    
+    // Toggle maps
+    document.querySelectorAll('.location-map').forEach(function(map) {
+        map.classList.remove('active');
+        map.style.display = 'none';
+    });
+    var activeMap = document.getElementById('map-' + local);
+    activeMap.classList.add('active');
+    activeMap.style.display = 'block';
+};
