@@ -332,13 +332,14 @@ p:last-child {
 
 .btn--outline {
     background: transparent;
-    color: var(--primary);
-    border-color: var(--primary);
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .btn--outline:hover {
-    background: var(--primary);
+    background: rgba(255, 255, 255, 0.15);
     color: var(--white);
+    border-color: var(--white);
 }
 
 .btn--white {
