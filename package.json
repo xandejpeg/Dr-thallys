@@ -1,6 +1,6 @@
 {
   "name": "dr-thallys-site",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Site institucional Dr. Thallys Henrique Alves",
   "type": "module",
   "scripts": {
