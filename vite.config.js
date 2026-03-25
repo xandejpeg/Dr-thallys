@@ -13,7 +13,6 @@ export default defineConfig({
         termos: 'termos-uso.html'
       }
     },
-    copyPublicDir: true
-  },
-  publicDir: 'assets'
+    copyPublicDir: false
+  }
 })

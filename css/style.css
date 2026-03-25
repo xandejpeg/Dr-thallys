@@ -292,7 +292,7 @@ p:last-child {
 
 .section__subtitle {
     font-size: var(--text-lg);
-    color: var(--gray-500);
+    color: var(--gray-600);
 }
 
 /* ============================================
@@ -1439,7 +1439,7 @@ p:last-child {
     flex-shrink: 0;
 }
 
-.contato__card-text h4 {
+.contato__card-text h3 {
     font-family: var(--font-body);
     font-size: var(--text-sm);
     font-weight: 600;
@@ -1580,7 +1580,7 @@ p:last-child {
 
 .footer__tagline {
     font-size: var(--text-sm);
-    color: var(--gray-500);
+    color: var(--gray-400);
     margin-bottom: var(--spacing-6);
 }
 
@@ -1608,9 +1608,9 @@ p:last-child {
     transform: translateY(-3px);
 }
 
-.footer__links h4,
-.footer__info h4,
-.footer__legal h4 {
+.footer__links h3,
+.footer__info h3,
+.footer__legal h3 {
     font-family: var(--font-body);
     font-size: var(--text-sm);
     font-weight: 600;
