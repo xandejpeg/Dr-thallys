@@ -203,41 +203,27 @@ function initFAQ() {
 }
 
 /* ============================================
-   AOS ANIMATIONS
+   REVEAL ANIMATIONS (IntersectionObserver)
    ============================================ */
 function initAnimations() {
-    // Initialize AOS
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out',
-            once: true,
-            offset: 100,
-            disable: function() {
-                return window.innerWidth < 768;
-            }
-        });
+    var els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    
+    if (!('IntersectionObserver' in window)) {
+        els.forEach(function(el) { el.classList.add('revealed'); });
+        return;
     }
     
-    // Reveal elements on scroll (fallback)
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
+    var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('revealed');
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
     
-    document.querySelectorAll('.reveal').forEach(function(el) {
-        observer.observe(el);
-    });
+    els.forEach(function(el) { observer.observe(el); });
 }
 
 /* ============================================
@@ -321,7 +307,7 @@ window.copiarEndereco = function(btn) {
     
     navigator.clipboard.writeText(endereco).then(function() {
         var originalHTML = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i><span>Copiado!</span>';
+        btn.innerHTML = '<svg class="icon icon-fa-check" aria-hidden="true"><use href="#icon-fa-check"/></svg><span>Copiado!</span>';
         btn.classList.add('copied');
         
         setTimeout(function() {
@@ -337,7 +323,7 @@ window.copiarEndereco = function(btn) {
         document.body.removeChild(textArea);
         
         var originalHTML = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i><span>Copiado!</span>';
+        btn.innerHTML = '<svg class="icon icon-fa-check" aria-hidden="true"><use href="#icon-fa-check"/></svg><span>Copiado!</span>';
         btn.classList.add('copied');
         
         setTimeout(function() {

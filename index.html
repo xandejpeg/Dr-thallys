@@ -23,17 +23,18 @@
     <!-- DNS Prefetch for third-party domains -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://connect.facebook.net">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     
     <!-- Preconnect to font CDNs -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Preload hero image (highest priority) -->
-    <link rel="preload" as="image" type="image/webp" href="assets/images/optimized/IMG_7150-Edit.webp" fetchpriority="high">
+    <!-- Preload hero image (mobile-first, highest priority) -->
+    <link rel="preload" as="image" type="image/webp" href="assets/images/optimized/IMG_7150-Edit-480w.webp" media="(max-width:480px)" fetchpriority="high">
+    <link rel="preload" as="image" type="image/webp" href="assets/images/optimized/IMG_7150-Edit-768w.webp" media="(min-width:481px) and (max-width:768px)" fetchpriority="high">
+    <link rel="preload" as="image" type="image/webp" href="assets/images/optimized/IMG_7150-Edit.webp" media="(min-width:769px)" fetchpriority="high">
     
     <!-- Critical CSS - inlined for fast FCP -->
-    <style>:root{--primary-dark:#0d2b23;--primary:#1a4d3e;--primary-light:#2a7a62;--primary-lighter:#e8f5f0;--accent:#c9a962;--white:#ffffff;--off-white:#fafaf8;--cream:#f8f7f4;--gray-100:#f5f5f5;--gray-500:#737373;--gray-600:#525252;--gray-700:#404040;--gray-800:#262626;--gray-900:#171717;--black:#0a0a0a;--font-heading:'Cormorant Garamond',Georgia,serif;--font-body:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;--text-xs:.75rem;--text-sm:.875rem;--text-base:1rem;--text-lg:1.125rem;--text-xl:1.25rem;--text-2xl:1.5rem;--text-4xl:2.5rem;--text-5xl:3.5rem;--text-6xl:4.5rem;--spacing-2:.5rem;--spacing-3:.75rem;--spacing-4:1rem;--spacing-5:1.25rem;--spacing-6:1.5rem;--spacing-8:2rem;--spacing-10:2.5rem;--spacing-12:3rem;--spacing-16:4rem;--spacing-20:5rem;--spacing-24:6rem;--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--shadow-md:0 4px 12px rgba(0,0,0,.08);--shadow-xl:0 24px 48px rgba(0,0,0,.16);--ease-out:cubic-bezier(.33,1,.68,1);--transition-fast:200ms var(--ease-out);--transition-normal:400ms var(--ease-out);--z-fixed:300;--z-modal:400}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}body{font-family:var(--font-body);font-size:var(--text-base);font-weight:400;line-height:1.7;color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}img{max-width:100%;height:auto;display:block;object-fit:cover}a{text-decoration:none;color:inherit;transition:all var(--transition-fast)}ul,ol{list-style:none}button{cursor:pointer;border:none;background:none;font-family:inherit;font-size:inherit}::selection{background-color:var(--primary);color:var(--white)}#preloader{position:fixed;inset:0;background:var(--white);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s ease,visibility .5s ease}#preloader.hidden{opacity:0;visibility:hidden}.loader{display:flex;flex-direction:column;align-items:center;gap:var(--spacing-6)}.loader img{width:80px;height:auto;animation:pulse 1.5s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(.95)}}h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:600;line-height:1.2;color:var(--gray-900);letter-spacing:-.02em}h1{font-size:var(--text-5xl)}.container{width:100%;max-width:1280px;margin:0 auto;padding:0 var(--spacing-6)}.header{position:fixed;top:0;left:0;width:100%;z-index:var(--z-fixed);transition:all var(--transition-normal);padding:var(--spacing-4) 0}.header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:var(--shadow-md);padding:var(--spacing-2) 0}.nav{display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-8)}.nav__logo{flex-shrink:0}.nav__logo img{height:50px;width:auto;transition:all var(--transition-fast);filter:brightness(0) invert(1)}.header.scrolled .nav__logo img{height:45px;filter:none}.nav__menu{display:flex;align-items:center}.nav__list{display:flex;align-items:center;gap:var(--spacing-10)}.nav__link{font-size:var(--text-sm);font-weight:500;color:var(--white);position:relative;padding:var(--spacing-2) 0}.header.scrolled .nav__link{color:var(--gray-700)}.nav__link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent);transition:width var(--transition-normal)}.nav__link:hover::after,.nav__link.active::after{width:100%}.nav__cta{display:none;padding:var(--spacing-3) var(--spacing-6);font-size:var(--text-sm);font-weight:600;color:var(--primary-dark);background:var(--white);border-radius:var(--radius-full);transition:all var(--transition-fast)}.header.scrolled .nav__cta{display:inline-flex;background:var(--primary);color:var(--white)}.nav__toggle,.nav__close{display:none;width:44px;height:44px;align-items:center;justify-content:center;font-size:var(--text-xl);color:var(--white);cursor:pointer;border-radius:var(--radius-md);transition:all var(--transition-fast)}.header.scrolled .nav__toggle{color:var(--gray-800)}.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}.hero__bg{position:absolute;inset:0;z-index:0}.hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center 20%}.hero__overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(4,31,23,.95) 0%,rgba(4,31,23,.7) 30%,rgba(4,31,23,.3) 60%,rgba(4,31,23,.1) 100%)}.hero__content{position:relative;z-index:2;color:var(--white);max-width:720px;text-align:center;margin:0 auto}.hero__tag{font-size:var(--text-sm);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:var(--spacing-6)}.hero__title{font-size:clamp(2.5rem,5vw,var(--text-6xl));font-weight:700;color:var(--white);margin-bottom:var(--spacing-6);line-height:1.05}.hero__title em{font-style:italic;color:rgba(255,255,255,.75)}.hero__desc{font-size:var(--text-lg);color:rgba(255,255,255,.7);max-width:520px;margin:0 auto var(--spacing-10);line-height:1.7}.hero__actions{display:flex;flex-wrap:wrap;gap:var(--spacing-4);justify-content:center}.hero__scroll{position:absolute;bottom:var(--spacing-10);left:50%;transform:translateX(-50%);z-index:2}.hero__scroll-btn{display:flex;flex-direction:column;align-items:center;gap:var(--spacing-3);color:rgba(255,255,255,.6);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:2px;transition:color var(--transition-fast)}.mouse{width:26px;height:40px;border:2px solid currentColor;border-radius:var(--radius-full);position:relative}.wheel{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:4px;height:8px;background:currentColor;border-radius:var(--radius-full);animation:scroll 2s infinite}@keyframes scroll{0%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0;transform:translateX(-50%) translateY(12px)}}.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing-3);padding:var(--spacing-4) var(--spacing-8);font-size:var(--text-sm);font-weight:600;letter-spacing:.5px;border-radius:var(--radius-full);transition:all var(--transition-normal);border:2px solid transparent;cursor:pointer;white-space:nowrap}.btn--primary{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);border-color:var(--primary);box-shadow:0 4px 16px rgba(26,77,62,.3)}.btn--outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.5)}.whatsapp-float{position:fixed;bottom:var(--spacing-8);right:var(--spacing-8);display:flex;align-items:center;gap:var(--spacing-3);padding:var(--spacing-4) var(--spacing-6);background:linear-gradient(135deg,#25d366,#128c7e);color:var(--white);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;box-shadow:0 8px 24px rgba(37,211,102,.3);z-index:var(--z-fixed);transition:all var(--transition-normal)}@media screen and (max-width:768px){:root{--text-5xl:2.5rem;--text-4xl:2rem;--text-3xl:1.5rem}.nav__menu{position:fixed;top:0;right:-100%;width:85%;max-width:320px;height:100vh;background:var(--white);padding:100px var(--spacing-8) var(--spacing-8);box-shadow:var(--shadow-xl);transition:right var(--transition-normal);z-index:var(--z-modal)}.nav__menu.show{right:0}.nav__list{flex-direction:column;align-items:flex-start;gap:var(--spacing-6)}.nav__link{color:var(--gray-800)!important;font-size:var(--text-lg)}.nav__toggle,.nav__close{display:flex}.nav__close{position:absolute;top:var(--spacing-6);right:var(--spacing-6);color:var(--gray-800)}.nav__cta{display:none!important}.hero{min-height:100svh;align-items:center;padding:80px 0}.hero__scroll{display:none}.hero__actions{flex-direction:column}.hero__actions .btn{width:100%;justify-content:center}.whatsapp-float__text{display:none}}@media screen and (max-width:480px){.container{padding:0 var(--spacing-4)}.btn{width:100%;justify-content:center}}</style>
+    <style>:root{--primary-dark:#0d2b23;--primary:#1a4d3e;--primary-light:#2a7a62;--primary-lighter:#e8f5f0;--accent:#c9a962;--white:#ffffff;--off-white:#fafaf8;--cream:#f8f7f4;--gray-100:#f5f5f5;--gray-500:#737373;--gray-600:#525252;--gray-700:#404040;--gray-800:#262626;--gray-900:#171717;--black:#0a0a0a;--font-heading:'Cormorant Garamond',Georgia,serif;--font-body:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;--text-xs:.75rem;--text-sm:.875rem;--text-base:1rem;--text-lg:1.125rem;--text-xl:1.25rem;--text-2xl:1.5rem;--text-4xl:2.5rem;--text-5xl:3.5rem;--text-6xl:4.5rem;--spacing-2:.5rem;--spacing-3:.75rem;--spacing-4:1rem;--spacing-5:1.25rem;--spacing-6:1.5rem;--spacing-8:2rem;--spacing-10:2.5rem;--spacing-12:3rem;--spacing-16:4rem;--spacing-20:5rem;--spacing-24:6rem;--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--radius-xl:24px;--radius-full:9999px;--shadow-md:0 4px 12px rgba(0,0,0,.08);--shadow-xl:0 24px 48px rgba(0,0,0,.16);--ease-out:cubic-bezier(.33,1,.68,1);--transition-fast:200ms var(--ease-out);--transition-normal:400ms var(--ease-out);--z-fixed:300;--z-modal:400}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}body{font-family:var(--font-body);font-size:var(--text-base);font-weight:400;line-height:1.7;color:var(--gray-700);background:var(--white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}img{max-width:100%;height:auto;display:block;object-fit:cover}a{text-decoration:none;color:inherit;transition:all var(--transition-fast)}ul,ol{list-style:none}button{cursor:pointer;border:none;background:none;font-family:inherit;font-size:inherit}.icon{width:1em;height:1em;display:inline-block;vertical-align:-.125em;fill:currentColor;flex-shrink:0}::selection{background-color:var(--primary);color:var(--white)}#preloader{position:fixed;inset:0;background:var(--white);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s ease,visibility .5s ease}#preloader.hidden{opacity:0;visibility:hidden}.loader{display:flex;flex-direction:column;align-items:center;gap:var(--spacing-6)}.loader img{width:80px;height:auto;animation:pulse 1.5s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(.95)}}h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:600;line-height:1.2;color:var(--gray-900);letter-spacing:-.02em}h1{font-size:var(--text-5xl)}.container{width:100%;max-width:1280px;margin:0 auto;padding:0 var(--spacing-6)}.header{position:fixed;top:0;left:0;width:100%;z-index:var(--z-fixed);transition:all var(--transition-normal);padding:var(--spacing-4) 0}.header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:var(--shadow-md);padding:var(--spacing-2) 0}.nav{display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-8)}.nav__logo{flex-shrink:0}.nav__logo img{height:50px;width:auto;transition:all var(--transition-fast);filter:brightness(0) invert(1)}.header.scrolled .nav__logo img{height:45px;filter:none}.nav__menu{display:flex;align-items:center}.nav__list{display:flex;align-items:center;gap:var(--spacing-10)}.nav__link{font-size:var(--text-sm);font-weight:500;color:var(--white);position:relative;padding:var(--spacing-2) 0}.header.scrolled .nav__link{color:var(--gray-700)}.nav__link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent);transition:width var(--transition-normal)}.nav__link:hover::after,.nav__link.active::after{width:100%}.nav__cta{display:none;padding:var(--spacing-3) var(--spacing-6);font-size:var(--text-sm);font-weight:600;color:var(--primary-dark);background:var(--white);border-radius:var(--radius-full);transition:all var(--transition-fast)}.header.scrolled .nav__cta{display:inline-flex;background:var(--primary);color:var(--white)}.nav__toggle,.nav__close{display:none;width:44px;height:44px;align-items:center;justify-content:center;font-size:var(--text-xl);color:var(--white);cursor:pointer;border-radius:var(--radius-md);transition:all var(--transition-fast)}.header.scrolled .nav__toggle{color:var(--gray-800)}.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}.hero__bg{position:absolute;inset:0;z-index:0}.hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center 20%}.hero__overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(4,31,23,.95) 0%,rgba(4,31,23,.7) 30%,rgba(4,31,23,.3) 60%,rgba(4,31,23,.1) 100%)}.hero__content{position:relative;z-index:2;color:var(--white);max-width:720px;text-align:center;margin:0 auto}.hero__tag{font-size:var(--text-sm);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:var(--spacing-6)}.hero__title{font-size:clamp(2.5rem,5vw,var(--text-6xl));font-weight:700;color:var(--white);margin-bottom:var(--spacing-6);line-height:1.05}.hero__title em{font-style:italic;color:rgba(255,255,255,.75)}.hero__desc{font-size:var(--text-lg);color:rgba(255,255,255,.7);max-width:520px;margin:0 auto var(--spacing-10);line-height:1.7}.hero__actions{display:flex;flex-wrap:wrap;gap:var(--spacing-4);justify-content:center}.hero__scroll{position:absolute;bottom:var(--spacing-10);left:50%;transform:translateX(-50%);z-index:2}.hero__scroll-btn{display:flex;flex-direction:column;align-items:center;gap:var(--spacing-3);color:rgba(255,255,255,.6);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:2px;transition:color var(--transition-fast)}.mouse{width:26px;height:40px;border:2px solid currentColor;border-radius:var(--radius-full);position:relative}.wheel{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:4px;height:8px;background:currentColor;border-radius:var(--radius-full);animation:scroll 2s infinite}@keyframes scroll{0%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0;transform:translateX(-50%) translateY(12px)}}.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--spacing-3);padding:var(--spacing-4) var(--spacing-8);font-size:var(--text-sm);font-weight:600;letter-spacing:.5px;border-radius:var(--radius-full);transition:all var(--transition-normal);border:2px solid transparent;cursor:pointer;white-space:nowrap}.btn--primary{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:var(--white);border-color:var(--primary);box-shadow:0 4px 16px rgba(26,77,62,.3)}.btn--outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.5)}.whatsapp-float{position:fixed;bottom:var(--spacing-8);right:var(--spacing-8);display:flex;align-items:center;gap:var(--spacing-3);padding:var(--spacing-4) var(--spacing-6);background:linear-gradient(135deg,#25d366,#128c7e);color:var(--white);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;box-shadow:0 8px 24px rgba(37,211,102,.3);z-index:var(--z-fixed);transition:all var(--transition-normal)}@media screen and (max-width:768px){:root{--text-5xl:2.5rem;--text-4xl:2rem;--text-3xl:1.5rem}.nav__menu{position:fixed;top:0;right:-100%;width:85%;max-width:320px;height:100vh;background:var(--white);padding:100px var(--spacing-8) var(--spacing-8);box-shadow:var(--shadow-xl);transition:right var(--transition-normal);z-index:var(--z-modal)}.nav__menu.show{right:0}.nav__list{flex-direction:column;align-items:flex-start;gap:var(--spacing-6)}.nav__link{color:var(--gray-800)!important;font-size:var(--text-lg)}.nav__toggle,.nav__close{display:flex}.nav__close{position:absolute;top:var(--spacing-6);right:var(--spacing-6);color:var(--gray-800)}.nav__cta{display:none!important}.hero{min-height:100svh;align-items:center;padding:80px 0}.hero__scroll{display:none}.hero__actions{flex-direction:column}.hero__actions .btn{width:100%;justify-content:center}.whatsapp-float__text{display:none}}@media screen and (max-width:480px){.container{padding:0 var(--spacing-4)}.btn{width:100%;justify-content:center}}</style>
     
     <!-- Full CSS (deferred - non-render-blocking) -->
     <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -43,13 +44,7 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
     
-    <!-- Font Awesome (deferred) -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
-    <!-- AOS Animation (deferred) -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"></noscript>
+
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -100,7 +95,7 @@
                 </ul>
                 
                 <div class="nav__close" id="nav-close">
-                    <i class="fas fa-times"></i>
+                    <svg class="icon icon-fa-times" aria-hidden="true"><use href="#icon-fa-times"/></svg>
                 </div>
             </div>
             
@@ -109,7 +104,7 @@
             </a>
             
             <div class="nav__toggle" id="nav-toggle">
-                <i class="fas fa-bars"></i>
+                <svg class="icon icon-fa-bars" aria-hidden="true"><use href="#icon-fa-bars"/></svg>
             </div>
         </nav>
     </header>
@@ -120,13 +115,14 @@
         <section class="hero" id="home">
             <div class="hero__bg">
                 <picture>
-                    <source srcset="assets/images/optimized/IMG_7150-Edit.webp" type="image/webp">
+                    <source srcset="assets/images/optimized/IMG_7150-Edit-480w.webp 480w, assets/images/optimized/IMG_7150-Edit-768w.webp 768w, assets/images/optimized/IMG_7150-Edit.webp 1920w" sizes="100vw" type="image/webp">
+                    <source srcset="assets/images/optimized/IMG_7150-Edit-480w.jpg 480w, assets/images/optimized/IMG_7150-Edit-768w.jpg 768w, assets/images/optimized/IMG_7150-Edit.jpg 1920w" sizes="100vw" type="image/jpeg">
                     <img src="assets/images/optimized/IMG_7150-Edit.jpg" alt="Dr. Thallys Henrique Alves" fetchpriority="high" width="1920" height="2400">
                 </picture>
             </div>
             <div class="hero__overlay"></div>
             
-            <div class="hero__content container" data-aos="fade-up" data-aos-duration="1000">
+            <div class="hero__content container reveal reveal-up">
                 <p class="hero__tag">Medicina do Esporte · Saúde Metabólica · Performance</p>
                 <h1 class="hero__title">Dr. Thallys<br><em>Henrique Alves</em></h1>
                 <p class="hero__desc">
@@ -135,7 +131,7 @@
                 </p>
                 <div class="hero__actions">
                     <a href="https://wa.me/5527998618287?text=Olá! Gostaria de agendar uma consulta." class="btn btn--primary" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Agendar Consulta
+                        <svg class="icon icon-fa-whatsapp" aria-hidden="true"><use href="#icon-fa-whatsapp"/></svg> Agendar Consulta
                     </a>
                     <a href="#sobre" class="btn btn--outline">Saiba mais</a>
                 </div>
@@ -155,7 +151,7 @@
         <section class="sobre section" id="sobre">
             <div class="container">
                 <div class="sobre__grid">
-                    <div class="sobre__images" data-aos="fade-right" data-aos-duration="800">
+                    <div class="sobre__images reveal reveal-right">
                         <div class="sobre__image-main">
                             <picture>
                                 <source srcset="assets/images/optimized/IMG_7031-Edit.webp" type="image/webp">
@@ -170,7 +166,7 @@
                         </div>
                     </div>
                     
-                    <div class="sobre__content" data-aos="fade-left" data-aos-duration="800">
+                    <div class="sobre__content reveal reveal-left">
                         <span class="section__tag">Sobre o Médico</span>
                         <h2 class="section__title">Compromisso com a sua saúde, desempenho e qualidade de vida</h2>
                         <div class="sobre__text">
@@ -196,7 +192,7 @@
                         <div class="sobre__contato" style="margin-top: 1.5em;">
                             <h3>Contato do Consultório</h3>
                             <ul style="list-style: none; padding-left: 0;">
-                                <li><i class="fab fa-whatsapp"></i> WhatsApp e Ligações: <a href="https://wa.me/5527998618287" target="_blank">(27) 99861-8287</a></li>
+                                <li><svg class="icon icon-fa-whatsapp" aria-hidden="true"><use href="#icon-fa-whatsapp"/></svg> WhatsApp e Ligações: <a href="https://wa.me/5527998618287" target="_blank">(27) 99861-8287</a></li>
                             </ul>
                         </div>
                     </div>
@@ -208,7 +204,7 @@
         <section class="contexto section section--dark">
             <div class="container">
                 <div class="contexto__wrapper">
-                    <div class="contexto__content" data-aos="fade-up">
+                    <div class="contexto__content reveal reveal-up">
                         <span class="section__tag section__tag--light">O Diferencial</span>
                         <h2 class="section__title section__title--light">Por que este atendimento existe</h2>
                         
@@ -219,32 +215,32 @@
                         
                         <div class="contexto__problems">
                             <div class="problem">
-                                <i class="fas fa-times"></i>
+                                <svg class="icon icon-fa-times" aria-hidden="true"><use href="#icon-fa-times"/></svg>
                                 <span>Tentativas repetidas de dietas genéricas</span>
                             </div>
                             <div class="problem">
-                                <i class="fas fa-times"></i>
+                                <svg class="icon icon-fa-times" aria-hidden="true"><use href="#icon-fa-times"/></svg>
                                 <span>Treinos sem avaliação clínica prévia</span>
                             </div>
                             <div class="problem">
-                                <i class="fas fa-times"></i>
+                                <svg class="icon icon-fa-times" aria-hidden="true"><use href="#icon-fa-times"/></svg>
                                 <span>Uso indiscriminado de suplementos</span>
                             </div>
                             <div class="problem">
-                                <i class="fas fa-times"></i>
+                                <svg class="icon icon-fa-times" aria-hidden="true"><use href="#icon-fa-times"/></svg>
                                 <span>Prescrição inadequada de medicamentos</span>
                             </div>
                             <div class="problem">
-                                <i class="fas fa-times"></i>
+                                <svg class="icon icon-fa-times" aria-hidden="true"><use href="#icon-fa-times"/></svg>
                                 <span>Protocolos "da moda", sem critério médico</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="contexto__solution" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contexto__solution reveal reveal-up" style="transition-delay:200ms">
                         <div class="solution__card">
                             <div class="solution__icon">
-                                <i class="fas fa-shield-alt"></i>
+                                <svg class="icon icon-fa-shield-alt" aria-hidden="true"><use href="#icon-fa-shield-alt"/></svg>
                             </div>
                             <h3>A Solução</h3>
                             <p>
@@ -252,7 +248,7 @@
                                 <strong>método, critério médico, segurança e acompanhamento real.</strong>
                             </p>
                             <a href="https://wa.me/5527998618287?text=Olá! Gostaria de agendar uma consulta." class="btn btn--white" target="_blank">
-                                <i class="fab fa-whatsapp"></i>
+                                <svg class="icon icon-fa-whatsapp" aria-hidden="true"><use href="#icon-fa-whatsapp"/></svg>
                                 Quero agendar
                             </a>
                         </div>
@@ -264,17 +260,17 @@
         <!-- Pilares Section -->
         <section class="pilares section" id="pilares">
             <div class="container">
-                <div class="section__header" data-aos="fade-up">
+                <div class="section__header reveal reveal-up">
                     <span class="section__tag">Fundamentos</span>
                     <h2 class="section__title">Pilares do Atendimento</h2>
                     <p class="section__subtitle">Três princípios que guiam cada consulta e acompanhamento</p>
                 </div>
                 
                 <div class="pilares__grid">
-                    <div class="pilar" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pilar reveal reveal-up" style="transition-delay:100ms">
                         <div class="pilar__number">01</div>
                         <div class="pilar__icon">
-                            <i class="fas fa-brain"></i>
+                            <svg class="icon icon-fa-brain" aria-hidden="true"><use href="#icon-fa-brain"/></svg>
                         </div>
                         <h3 class="pilar__title">Ciência</h3>
                         <p class="pilar__text">
@@ -284,10 +280,10 @@
                         </p>
                     </div>
                     
-                    <div class="pilar" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pilar reveal reveal-up" style="transition-delay:200ms">
                         <div class="pilar__number">02</div>
                         <div class="pilar__icon">
-                            <i class="fas fa-user"></i>
+                            <svg class="icon icon-fa-user" aria-hidden="true"><use href="#icon-fa-user"/></svg>
                         </div>
                         <h3 class="pilar__title">Individualização</h3>
                         <p class="pilar__text">
@@ -296,10 +292,10 @@
                         </p>
                     </div>
                     
-                    <div class="pilar" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pilar reveal reveal-up" style="transition-delay:300ms">
                         <div class="pilar__number">03</div>
                         <div class="pilar__icon">
-                            <i class="fas fa-sync-alt"></i>
+                            <svg class="icon icon-fa-sync-alt" aria-hidden="true"><use href="#icon-fa-sync-alt"/></svg>
                         </div>
                         <h3 class="pilar__title">Acompanhamento</h3>
                         <p class="pilar__text">
@@ -314,18 +310,18 @@
         <!-- Como Funciona Section -->
         <section class="consulta section section--light" id="consulta">
             <div class="container">
-                <div class="section__header" data-aos="fade-up">
+                <div class="section__header reveal reveal-up">
                     <span class="section__tag">Passo a Passo</span>
                     <h2 class="section__title">Como Funciona a Consulta</h2>
                     <p class="section__subtitle">Um processo estruturado para garantir atendimento completo e seguro</p>
                 </div>
                 
                 <div class="consulta__steps">
-                    <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step reveal reveal-up" style="transition-delay:100ms">
                         <div class="step__header">
                             <div class="step__number">01</div>
                             <div class="step__icon">
-                                <i class="fas fa-clipboard-list"></i>
+                                <svg class="icon icon-fa-clipboard-list" aria-hidden="true"><use href="#icon-fa-clipboard-list"/></svg>
                             </div>
                         </div>
                         <div class="step__content">
@@ -340,11 +336,11 @@
                         </div>
                     </div>
                     
-                    <div class="step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step reveal reveal-up" style="transition-delay:200ms">
                         <div class="step__header">
                             <div class="step__number">02</div>
                             <div class="step__icon">
-                                <i class="fas fa-weight"></i>
+                                <svg class="icon icon-fa-weight" aria-hidden="true"><use href="#icon-fa-weight"/></svg>
                             </div>
                         </div>
                         <div class="step__content">
@@ -359,11 +355,11 @@
                         </div>
                     </div>
                     
-                    <div class="step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step reveal reveal-up" style="transition-delay:300ms">
                         <div class="step__header">
                             <div class="step__number">03</div>
                             <div class="step__icon">
-                                <i class="fas fa-file-medical"></i>
+                                <svg class="icon icon-fa-file-medical" aria-hidden="true"><use href="#icon-fa-file-medical"/></svg>
                             </div>
                         </div>
                         <div class="step__content">
@@ -377,11 +373,11 @@
                         </div>
                     </div>
                     
-                    <div class="step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step reveal reveal-up" style="transition-delay:400ms">
                         <div class="step__header">
                             <div class="step__number">04</div>
                             <div class="step__icon">
-                                <i class="fas fa-running"></i>
+                                <svg class="icon icon-fa-running" aria-hidden="true"><use href="#icon-fa-running"/></svg>
                             </div>
                         </div>
                         <div class="step__content">
@@ -394,11 +390,11 @@
                         </div>
                     </div>
                     
-                    <div class="step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step reveal reveal-up" style="transition-delay:500ms">
                         <div class="step__header">
                             <div class="step__number">05</div>
                             <div class="step__icon">
-                                <i class="fab fa-whatsapp"></i>
+                                <svg class="icon icon-fa-whatsapp" aria-hidden="true"><use href="#icon-fa-whatsapp"/></svg>
                             </div>
                         </div>
                         <div class="step__content">
@@ -417,15 +413,15 @@
         <!-- Indicações Section -->
         <section class="indicacoes section">
             <div class="container">
-                <div class="section__header" data-aos="fade-up">
+                <div class="section__header reveal reveal-up">
                     <span class="section__tag">Público</span>
                     <h2 class="section__title">Para Quem é Este Atendimento</h2>
                 </div>
                 
                 <div class="indicacoes__grid">
-                    <div class="indicacoes__card indicacoes__card--yes" data-aos="fade-right">
+                    <div class="indicacoes__card indicacoes__card--yes reveal reveal-right">
                         <div class="indicacoes__header">
-                            <i class="fas fa-check-circle"></i>
+                            <svg class="icon icon-fa-check-circle" aria-hidden="true"><use href="#icon-fa-check-circle"/></svg>
                             <h3>Indicado Para</h3>
                         </div>
                         <ul class="indicacoes__list">
@@ -439,9 +435,9 @@
                         </ul>
                     </div>
                     
-                    <div class="indicacoes__card indicacoes__card--no" data-aos="fade-left">
+                    <div class="indicacoes__card indicacoes__card--no reveal reveal-left">
                         <div class="indicacoes__header">
-                            <i class="fas fa-times-circle"></i>
+                            <svg class="icon icon-fa-times-circle" aria-hidden="true"><use href="#icon-fa-times-circle"/></svg>
                             <h3>Não Indicado Para</h3>
                         </div>
                         <ul class="indicacoes__list">
@@ -460,12 +456,12 @@
         <!-- Galeria Section -->
         <section class="galeria section section--dark">
             <div class="container">
-                <div class="section__header" data-aos="fade-up">
+                <div class="section__header reveal reveal-up">
                     <span class="section__tag section__tag--light">Galeria</span>
                     <h2 class="section__title section__title--light">Conheça o Profissional</h2>
                 </div>
                 
-                <div class="galeria__grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="galeria__grid reveal reveal-up" style="transition-delay:100ms">
                     <div class="galeria__item galeria__item--large">
                         <picture>
                             <source srcset="assets/images/optimized/IMG_7042-Edit.webp" type="image/webp">
@@ -504,7 +500,7 @@
         <section class="faq section" id="faq">
             <div class="container">
                 <div class="faq__wrapper">
-                    <div class="faq__content" data-aos="fade-right">
+                    <div class="faq__content reveal reveal-right">
                         <span class="section__tag">Dúvidas</span>
                         <h2 class="section__title">Perguntas<br>Frequentes</h2>
                         <p class="faq__description">
@@ -512,16 +508,16 @@
                             o atendimento médico.
                         </p>
                         <a href="https://wa.me/5527998618287?text=Olá! Tenho uma dúvida sobre o atendimento." class="btn btn--primary" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
+                            <svg class="icon icon-fa-whatsapp" aria-hidden="true"><use href="#icon-fa-whatsapp"/></svg>
                             Ainda tem dúvidas?
                         </a>
                     </div>
                     
-                    <div class="faq__list" data-aos="fade-left">
+                    <div class="faq__list reveal reveal-left">
                         <div class="faq__item">
                             <button class="faq__question">
                                 <span>A consulta tem duração fixa?</span>
-                                <i class="fas fa-plus"></i>
+                                <svg class="icon icon-fa-plus" aria-hidden="true"><use href="#icon-fa-plus"/></svg>
                             </button>
                             <div class="faq__answer">
                                 <p>Não. A consulta tem duração adequada para uma avaliação completa, sem pressa.</p>
@@ -531,7 +527,7 @@
                         <div class="faq__item">
                             <button class="faq__question">
                                 <span>O valor da consulta aparece no site?</span>
-                                <i class="fas fa-plus"></i>
+                                <svg class="icon icon-fa-plus" aria-hidden="true"><use href="#icon-fa-plus"/></svg>
                             </button>
                             <div class="faq__answer">
                                 <p>Não. O valor é informado diretamente pelo WhatsApp.</p>
@@ -541,7 +537,7 @@
                         <div class="faq__item">
                             <button class="faq__question">
                                 <span>Existe retorno presencial?</span>
-                                <i class="fas fa-plus"></i>
+                                <svg class="icon icon-fa-plus" aria-hidden="true"><use href="#icon-fa-plus"/></svg>
                             </button>
                             <div class="faq__answer">
                                 <p>O acompanhamento ocorre por WhatsApp por até 2 meses. Retornos presenciais são agendados quando necessários.</p>
@@ -551,7 +547,7 @@
                         <div class="faq__item">
                             <button class="faq__question">
                                 <span>Faz dieta?</span>
-                                <i class="fas fa-plus"></i>
+                                <svg class="icon icon-fa-plus" aria-hidden="true"><use href="#icon-fa-plus"/></svg>
                             </button>
                             <div class="faq__answer">
                                 <p>Não são prescritas dietas formais. Estratégias de estilo de vida podem ser discutidas conforme o caso.</p>
@@ -561,7 +557,7 @@
                         <div class="faq__item">
                             <button class="faq__question">
                                 <span>Prescreve medicamentos?</span>
-                                <i class="fas fa-plus"></i>
+                                <svg class="icon icon-fa-plus" aria-hidden="true"><use href="#icon-fa-plus"/></svg>
                             </button>
                             <div class="faq__answer">
                                 <p>Somente quando há indicação clínica, sempre com segurança e critério médico.</p>
@@ -571,7 +567,7 @@
                         <div class="faq__item">
                             <button class="faq__question">
                                 <span>Atende convênios?</span>
-                                <i class="fas fa-plus"></i>
+                                <svg class="icon icon-fa-plus" aria-hidden="true"><use href="#icon-fa-plus"/></svg>
                             </button>
                             <div class="faq__answer">
                                 <p>Não. Atendimento exclusivamente particular.</p>
@@ -592,14 +588,14 @@
                 <div class="cta__overlay"></div>
             </div>
             <div class="container">
-                <div class="cta__content" data-aos="zoom-in">
+                <div class="cta__content reveal reveal-zoom">
                     <h2 class="cta__title">Pronto para cuidar da sua<br>saúde de forma séria?</h2>
                     <p class="cta__text">
                         Atendimento médico individualizado, baseado em ciência<br>
                         e com acompanhamento real.
                     </p>
                     <a href="https://wa.me/5527998618287?text=Olá! Gostaria de agendar uma consulta." class="btn btn--white btn--large" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
+                        <svg class="icon icon-fa-whatsapp" aria-hidden="true"><use href="#icon-fa-whatsapp"/></svg>
                         Agende sua consulta
                     </a>
                 </div>
@@ -609,30 +605,30 @@
         <!-- Contato Section -->
         <section class="contato section" id="contato">
             <div class="container">
-                <span class="section__tag" data-aos="fade-up">Contato</span>
-                <h2 class="section__title" data-aos="fade-up">Localização</h2>
+                <span class="section__tag reveal reveal-up">Contato</span>
+                <h2 class="section__title reveal reveal-up">Localização</h2>
 
                 <!-- Location Toggle -->
-                <div class="location-toggle" data-aos="fade-up">
+                <div class="location-toggle reveal reveal-up">
                     <button class="location-toggle__btn active" data-location="colatina" onclick="trocarLocal('colatina')">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <svg class="icon icon-fa-map-marker-alt" aria-hidden="true"><use href="#icon-fa-map-marker-alt"/></svg>
                         Colatina
                     </button>
                     <button class="location-toggle__btn" data-location="vitoria" onclick="trocarLocal('vitoria')">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <svg class="icon icon-fa-map-marker-alt" aria-hidden="true"><use href="#icon-fa-map-marker-alt"/></svg>
                         Vitória
                     </button>
                 </div>
 
                 <div class="contato__grid">
                     <!-- Info Side -->
-                    <div class="contato__info" data-aos="fade-right">
+                    <div class="contato__info reveal reveal-right">
                         <!-- Colatina Panel -->
                         <div class="location-panel active" id="panel-colatina">
                             <div class="contato__cards">
                                 <div class="contato__card contato__card--location">
                                     <div class="contato__card-icon">
-                                        <i class="fas fa-map-marker-alt"></i>
+                                        <svg class="icon icon-fa-map-marker-alt" aria-hidden="true"><use href="#icon-fa-map-marker-alt"/></svg>
                                     </div>
                                     <div class="contato__card-text">
                                         <h3>Endereço — Colatina</h3>
@@ -643,18 +639,18 @@
                                 
                                 <div class="contato__actions">
                                     <button class="contato__action-btn btn-copiar" onclick="copiarEndereco(this)">
-                                        <i class="fas fa-copy"></i>
+                                        <svg class="icon icon-fa-copy" aria-hidden="true"><use href="#icon-fa-copy"/></svg>
                                         <span>Copiar Endereço</span>
                                     </button>
                                     <a href="https://waze.com/ul?q=Av.%20Luiz%20Dalla%20Bernardina%2C%20138%20Colatina%20ES&navigate=yes" target="_blank" rel="noopener noreferrer" class="contato__action-btn contato__action-btn--waze">
-                                        <i class="fab fa-waze"></i>
+                                        <svg class="icon icon-fa-waze" aria-hidden="true"><use href="#icon-fa-waze"/></svg>
                                         <span>Abrir no Waze</span>
                                     </a>
                                 </div>
 
                                 <div class="contato__card">
                                     <div class="contato__card-icon">
-                                        <i class="fas fa-clock"></i>
+                                        <svg class="icon icon-fa-clock" aria-hidden="true"><use href="#icon-fa-clock"/></svg>
                                     </div>
                                     <div class="contato__card-text">
                                         <h3>Horários</h3>
@@ -665,7 +661,7 @@
 
                                 <div class="contato__card">
                                     <div class="contato__card-icon">
-                                        <i class="fas fa-credit-card"></i>
+                                        <svg class="icon icon-fa-credit-card" aria-hidden="true"><use href="#icon-fa-credit-card"/></svg>
                                     </div>
                                     <div class="contato__card-text">
                                         <h3>Atendimento</h3>
@@ -681,7 +677,7 @@
                             <div class="contato__cards">
                                 <div class="contato__card contato__card--location">
                                     <div class="contato__card-icon">
-                                        <i class="fas fa-map-marker-alt"></i>
+                                        <svg class="icon icon-fa-map-marker-alt" aria-hidden="true"><use href="#icon-fa-map-marker-alt"/></svg>
                                     </div>
                                     <div class="contato__card-text">
                                         <h3>Endereço — Vitória</h3>
@@ -692,18 +688,18 @@
                                 
                                 <div class="contato__actions">
                                     <button class="contato__action-btn btn-copiar" onclick="copiarEndereco(this)">
-                                        <i class="fas fa-copy"></i>
+                                        <svg class="icon icon-fa-copy" aria-hidden="true"><use href="#icon-fa-copy"/></svg>
                                         <span>Copiar Endereço</span>
                                     </button>
                                     <a href="https://waze.com/ul?q=Av.%20Saturnino%20Rangel%20Mauro%2C%20999%20Jardim%20da%20Penha%20Vitoria%20ES&navigate=yes" target="_blank" rel="noopener noreferrer" class="contato__action-btn contato__action-btn--waze">
-                                        <i class="fab fa-waze"></i>
+                                        <svg class="icon icon-fa-waze" aria-hidden="true"><use href="#icon-fa-waze"/></svg>
                                         <span>Abrir no Waze</span>
                                     </a>
                                 </div>
 
                                 <div class="contato__card">
                                     <div class="contato__card-icon">
-                                        <i class="fas fa-clock"></i>
+                                        <svg class="icon icon-fa-clock" aria-hidden="true"><use href="#icon-fa-clock"/></svg>
                                     </div>
                                     <div class="contato__card-text">
                                         <h3>Horários</h3>
@@ -714,7 +710,7 @@
 
                                 <div class="contato__card">
                                     <div class="contato__card-icon">
-                                        <i class="fas fa-credit-card"></i>
+                                        <svg class="icon icon-fa-credit-card" aria-hidden="true"><use href="#icon-fa-credit-card"/></svg>
                                     </div>
                                     <div class="contato__card-text">
                                         <h3>Atendimento</h3>
@@ -727,7 +723,7 @@
                     </div>
 
                     <!-- Map Side -->
-                    <div class="contato__map" data-aos="fade-left">
+                    <div class="contato__map reveal reveal-left">
                         <iframe id="map-colatina" class="location-map active" title="Mapa - Consultório Colatina"
                             data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.5!2d-40.6319027!3d-19.5383181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb7a827ce6d57b7%3A0x3c004e1285d1689a!2sWalter%20Bernardina%20Centro%20Medico!5e0!3m2!1spt-BR!2sbr"
                             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
@@ -756,10 +752,10 @@
                     <p class="footer__tagline">Medicina do Esporte | Saúde Metabólica | Performance</p>
                     <div class="footer__social">
                         <a href="https://wa.me/5527998618287" target="_blank" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
+                            <svg class="icon icon-fa-whatsapp" aria-hidden="true"><use href="#icon-fa-whatsapp"/></svg>
                         </a>
                         <a href="https://www.instagram.com/dr.thallyshenriquealves" target="_blank" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
+                            <svg class="icon icon-fa-instagram" aria-hidden="true"><use href="#icon-fa-instagram"/></svg>
                         </a>
                     </div>
                 </div>
@@ -778,10 +774,10 @@
                 <div class="footer__info">
                     <h3>Informações</h3>
                     <ul>
-                        <li><i class="fas fa-user-md"></i> Atendimento particular</li>
-                        <li><i class="fas fa-calendar"></i> Seg, Qua, Qui, Sex</li>
-                        <li><i class="fas fa-clock"></i> 7h às 17h</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Colatina – ES | Vitória – ES</li>
+                        <li><svg class="icon icon-fa-user-md" aria-hidden="true"><use href="#icon-fa-user-md"/></svg> Atendimento particular</li>
+                        <li><svg class="icon icon-fa-calendar" aria-hidden="true"><use href="#icon-fa-calendar"/></svg> Seg, Qua, Qui, Sex</li>
+                        <li><svg class="icon icon-fa-clock" aria-hidden="true"><use href="#icon-fa-clock"/></svg> 7h às 17h</li>
+                        <li><svg class="icon icon-fa-map-marker-alt" aria-hidden="true"><use href="#icon-fa-map-marker-alt"/></svg> Colatina – ES | Vitória – ES</li>
                     </ul>
                 </div>
                 
@@ -796,24 +792,23 @@
             
             <div class="footer__bottom">
                 <p>&copy; <span id="current-year"></span> Dr. Thallys Henrique Alves. Todos os direitos reservados.</p>
-                <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px; color: #999;">v 1.0.9</p>
+                <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 8px; color: #999;">v 1.0.10</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/5527998618287?text=Olá! Gostaria de agendar uma consulta." class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+        <svg class="icon icon-fa-whatsapp" aria-hidden="true"><use href="#icon-fa-whatsapp"/></svg>
         <span class="whatsapp-float__text">Agendar</span>
     </a>
 
     <!-- Back to Top -->
     <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
-        <i class="fas fa-chevron-up"></i>
+        <svg class="icon icon-fa-chevron-up" aria-hidden="true"><use href="#icon-fa-chevron-up"/></svg>
     </button>
 
     <!-- Scripts -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script type="module" src="js/main.js"></script>
     
     <!-- Google Tag Manager (delayed to not block FCP) -->
