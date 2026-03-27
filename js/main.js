@@ -4,12 +4,12 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all modules
     initPreloader();
     initNavigation();
     initScrollEffects();
     initFAQ();
     initAnimations();
+    initLazyMaps();
     setCurrentYear();
 });
 
@@ -18,17 +18,26 @@ document.addEventListener('DOMContentLoaded', function() {
    ============================================ */
 function initPreloader() {
     const preloader = document.getElementById('preloader');
+    const heroImg = document.querySelector('.hero__bg img');
     
-    window.addEventListener('load', function() {
+    function hidePreloader() {
+        if (preloader._hidden) return;
+        preloader._hidden = true;
+        preloader.classList.add('hidden');
         setTimeout(function() {
-            preloader.classList.add('hidden');
-            
-            // Remove preloader from DOM after transition
-            setTimeout(function() {
-                preloader.style.display = 'none';
-            }, 500);
+            preloader.style.display = 'none';
         }, 500);
-    });
+    }
+    
+    // Hide as soon as hero image is ready (or after 1.5s max)
+    if (heroImg && heroImg.complete) {
+        setTimeout(hidePreloader, 100);
+    } else if (heroImg) {
+        heroImg.addEventListener('load', hidePreloader);
+        setTimeout(hidePreloader, 1500);
+    } else {
+        setTimeout(hidePreloader, 300);
+    }
 }
 
 /* ============================================
@@ -242,55 +251,6 @@ function setCurrentYear() {
 }
 
 /* ============================================
-   FORM VALIDATION (if needed in future)
-   ============================================ */
-function validateForm(form) {
-    const inputs = form.querySelectorAll('input[required], textarea[required]');
-    let isValid = true;
-    
-    inputs.forEach(function(input) {
-        if (!input.value.trim()) {
-            isValid = false;
-            input.classList.add('error');
-        } else {
-            input.classList.remove('error');
-        }
-        
-        // Email validation
-        if (input.type === 'email' && input.value) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(input.value)) {
-                isValid = false;
-                input.classList.add('error');
-            }
-        }
-    });
-    
-    return isValid;
-}
-
-/* ============================================
-   PHONE MASK (if needed in future)
-   ============================================ */
-function phoneMask(input) {
-    input.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
-        
-        if (value.length > 11) {
-            value = value.substring(0, 11);
-        }
-        
-        if (value.length > 7) {
-            value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-        } else if (value.length > 2) {
-            value = value.replace(/(\d{2})(\d+)/, '($1) $2');
-        }
-        
-        e.target.value = value;
-    });
-}
-
-/* ============================================
    DEBOUNCE UTILITY
    ============================================ */
 function debounce(func, wait) {
@@ -322,85 +282,34 @@ function throttle(func, limit) {
 }
 
 /* ============================================
-   LAZY LOAD IMAGES
+   LAZY LOAD MAP IFRAMES
    ============================================ */
-function initLazyLoad() {
-    const lazyImages = document.querySelectorAll('img[data-src]');
+function initLazyMaps() {
+    const mapContainer = document.querySelector('.contato__map');
+    if (!mapContainer) return;
     
-    const imageObserver = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                imageObserver.unobserve(img);
+                // Load all map iframes when section comes into view
+                mapContainer.querySelectorAll('iframe[data-src]').forEach(function(iframe) {
+                    iframe.src = iframe.dataset.src;
+                    iframe.removeAttribute('data-src');
+                });
+                observer.unobserve(entry.target);
             }
         });
-    });
+    }, { rootMargin: '200px' });
     
-    lazyImages.forEach(function(img) {
-        imageObserver.observe(img);
-    });
-}
-
-/* ============================================
-   COUNTER ANIMATION (for stats if needed)
-   ============================================ */
-function animateCounter(element, target, duration) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    
-    function updateCounter() {
-        start += increment;
-        
-        if (start < target) {
-            element.textContent = Math.floor(start);
-            requestAnimationFrame(updateCounter);
-        } else {
-            element.textContent = target;
-        }
-    }
-    
-    updateCounter();
+    observer.observe(mapContainer);
 }
 
 /* ============================================
    TOUCH DEVICE DETECTION
    ============================================ */
-function isTouchDevice() {
-    return ('ontouchstart' in window) || 
-           (navigator.maxTouchPoints > 0) || 
-           (navigator.msMaxTouchPoints > 0);
-}
-
-// Add touch class to body if touch device
-if (isTouchDevice()) {
+if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
     document.body.classList.add('touch-device');
 }
-
-/* ============================================
-   PARALLAX EFFECT (optional)
-   ============================================ */
-function initParallax() {
-    const parallaxElements = document.querySelectorAll('[data-parallax]');
-    
-    if (parallaxElements.length === 0) return;
-    
-    window.addEventListener('scroll', throttle(function() {
-        const scrollY = window.pageYOffset;
-        
-        parallaxElements.forEach(function(el) {
-            const speed = el.dataset.parallax || 0.5;
-            el.style.transform = 'translateY(' + (scrollY * speed) + 'px)';
-        });
-    }, 16));
-}
-
-/* ============================================
-   CONSOLE MESSAGE
-   ============================================ */
-console.log('%c Dr. Thallys Henrique Alves ', 'background: #1a4d3e; color: #fff; font-size: 16px; padding: 10px 20px; border-radius: 5px;');
-console.log('%c Medicina do Esporte | Saúde Metabólica | Performance ', 'color: #1a4d3e; font-size: 12px;');
 
 /* ============================================
    COPIAR ENDEREÇO
@@ -453,12 +362,16 @@ window.trocarLocal = function(local) {
     });
     document.getElementById('panel-' + local).classList.add('active');
     
-    // Toggle maps
+    // Toggle maps + ensure iframe src is loaded
     document.querySelectorAll('.location-map').forEach(function(map) {
         map.classList.remove('active');
         map.style.display = 'none';
     });
     var activeMap = document.getElementById('map-' + local);
+    if (activeMap.dataset.src && !activeMap.src) {
+        activeMap.src = activeMap.dataset.src;
+        activeMap.removeAttribute('data-src');
+    }
     activeMap.classList.add('active');
     activeMap.style.display = 'block';
 };
