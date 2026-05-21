@@ -713,6 +713,96 @@ p:last-child {
     line-height: 1.8;
 }
 
+.sobre__subsection {
+    margin-top: var(--spacing-8);
+    padding-top: var(--spacing-6);
+    border-top: 1px solid var(--gray-200);
+}
+
+.sobre__subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: var(--spacing-4);
+}
+
+.sobre__subsection p {
+    font-size: var(--text-base);
+    color: var(--gray-700);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-4);
+}
+
+.sobre__areas-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-5);
+}
+
+.sobre__areas-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3) var(--spacing-4);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    background: var(--off-white);
+    color: var(--gray-800);
+    font-weight: 500;
+}
+
+.sobre__areas-list li::before,
+.sobre__consulta-list li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+.sobre__consulta-box {
+    margin-top: var(--spacing-8);
+    padding: var(--spacing-8);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
+}
+
+.sobre__consulta-list {
+    display: grid;
+    gap: var(--spacing-4);
+}
+
+.sobre__consulta-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+    font-size: var(--text-lg);
+    line-height: 1.5;
+    color: var(--gray-900);
+}
+
+.sobre__statement {
+    margin-top: var(--spacing-8);
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.8vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--gray-900);
+}
+
+.sobre__statement-italic {
+    margin-top: var(--spacing-2);
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+    font-style: italic;
+    color: var(--gray-600);
+}
+
 .sobre__highlights {
     display: flex;
     flex-direction: column;
