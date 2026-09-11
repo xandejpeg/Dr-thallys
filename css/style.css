@@ -1426,6 +1426,7 @@ p:last-child {
 .location-toggle {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: var(--spacing-3);
     margin-bottom: var(--spacing-8);
 }
@@ -1837,6 +1838,264 @@ p:last-child {
 }
 
 /* ============================================
+   HERO - LINHA DE IDENTIFICAÇÃO (CRM)
+   ============================================ */
+.hero__desc {
+    max-width: 640px;
+}
+
+.hero__actions .btn {
+    white-space: normal;
+    text-align: center;
+}
+
+.hero__identity {
+    margin-top: var(--spacing-8);
+    font-size: var(--text-xs);
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hero__identity span {
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================
+   PARA QUEM É SECTION
+   ============================================ */
+.perfis__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-6);
+}
+
+.perfil {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.perfil:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-lighter);
+}
+
+.perfil__title {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-3);
+    padding-bottom: var(--spacing-3);
+    border-bottom: 2px solid var(--primary-lighter);
+}
+
+.perfil__text {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.perfis__note {
+    max-width: 700px;
+    margin: var(--spacing-10) auto 0;
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+}
+
+.perfis__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-8);
+}
+
+.perfis__excluded {
+    max-width: 700px;
+    margin: var(--spacing-16) auto 0;
+    padding: var(--spacing-8);
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg, var(--white) 0%, #fef2f2 100%);
+    border: 2px solid #fecaca;
+}
+
+.perfis__excluded .indicacoes__header {
+    justify-content: center;
+}
+
+.perfis__excluded .indicacoes__header .icon {
+    font-size: var(--text-2xl);
+    color: var(--danger);
+}
+
+.perfis__excluded-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-2) var(--spacing-6);
+}
+
+.perfis__excluded-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    padding: var(--spacing-2) 0;
+}
+
+.perfis__excluded-list li::before {
+    content: '✕';
+    color: var(--danger);
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   MÉTODO SECTION
+   ============================================ */
+.section__subtitle--light {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.metodo__problems {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-4);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.metodo__problems .problem .icon {
+    color: #ef4444;
+    font-size: var(--text-sm);
+}
+
+.metodo__pilares {
+    margin-top: var(--spacing-16);
+}
+
+/* ============================================
+   SOBRE - CREDENCIAIS E CONTATO
+   ============================================ */
+.sobre__credenciais {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-8);
+    padding: var(--spacing-6);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    border-left: 4px solid var(--accent);
+    box-shadow: var(--shadow-md);
+}
+
+.sobre__credenciais li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.sobre__credenciais li::before {
+    content: '';
+    flex-shrink: 0;
+    margin-top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.sobre__contato {
+    margin-top: var(--spacing-8);
+}
+
+.sobre__contato-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+.sobre__contato-list .icon {
+    color: var(--primary);
+}
+
+.sobre__contato-list a {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.sobre__contato-list a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   CONSULTA - NOTA DO PASSO
+   ============================================ */
+.step__note {
+    margin-top: var(--spacing-3);
+    font-size: var(--text-xs);
+    font-style: italic;
+    color: var(--gray-500);
+}
+
+/* ============================================
+   FAQ - LISTAS DENTRO DA RESPOSTA
+   ============================================ */
+.faq__answer ul {
+    margin: var(--spacing-3) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.faq__answer li {
+    position: relative;
+    padding-left: var(--spacing-5);
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+.faq__answer li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+/* ============================================
+   CONTATO - CTA DO PAINEL
+   ============================================ */
+.contato__cta {
+    width: 100%;
+}
+
+/* ============================================
+   RODAPÉ - IDENTIFICAÇÃO
+   ============================================ */
+.footer__crm {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: var(--spacing-5);
+}
+
+/* ============================================
    RESPONSIVE - TABLET
    ============================================ */
 @media screen and (max-width: 1024px) {
@@ -1883,6 +2142,10 @@ p:last-child {
     
     .indicacoes__grid {
         grid-template-columns: 1fr;
+    }
+    
+    .perfis__grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .galeria__grid {
@@ -2001,6 +2264,19 @@ p:last-child {
     
     .step {
         padding: var(--spacing-5);
+    }
+    
+    /* Mobile Para quem é */
+    .perfis__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .perfis__excluded {
+        padding: var(--spacing-6);
+    }
+    
+    .perfis__excluded-list {
+        grid-template-columns: 1fr;
     }
     
     /* Mobile Galeria */

@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFAQ();
     initAnimations();
     initLazyMaps();
+    initCtaTracking();
     setCurrentYear();
 });
 
@@ -29,12 +30,12 @@ function initPreloader() {
         }, 500);
     }
     
-    // Hide as soon as hero image is ready (or after 1.5s max)
+    // Hide as soon as hero image is ready (or after 800ms max, para não atrasar o LCP)
     if (heroImg && heroImg.complete) {
-        setTimeout(hidePreloader, 100);
+        hidePreloader();
     } else if (heroImg) {
         heroImg.addEventListener('load', hidePreloader);
-        setTimeout(hidePreloader, 1500);
+        setTimeout(hidePreloader, 800);
     } else {
         setTimeout(hidePreloader, 300);
     }
@@ -227,6 +228,24 @@ function initAnimations() {
 }
 
 /* ============================================
+   RASTREAMENTO DE CLIQUES NOS CTAs (GTM)
+   ============================================ */
+function initCtaTracking() {
+    document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[data-cta]');
+        if (!link) return;
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'whatsapp_click',
+            cta_id: link.dataset.cta,
+            cta_section: link.dataset.ctaSection || '',
+            cta_label: link.textContent.trim()
+        });
+    });
+}
+
+/* ============================================
    SET CURRENT YEAR
    ============================================ */
 function setCurrentYear() {
@@ -353,7 +372,17 @@ window.trocarLocal = function(local) {
         map.classList.remove('active');
         map.style.display = 'none';
     });
+
+    var mapWrapper = document.querySelector('.contato__map');
     var activeMap = document.getElementById('map-' + local);
+
+    // Teleconsulta não tem endereço físico, portanto não tem mapa
+    if (!activeMap) {
+        if (mapWrapper) mapWrapper.style.display = 'none';
+        return;
+    }
+    if (mapWrapper) mapWrapper.style.display = '';
+
     if (activeMap.dataset.src && !activeMap.src) {
         activeMap.src = activeMap.dataset.src;
         activeMap.removeAttribute('data-src');
