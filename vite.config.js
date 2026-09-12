@@ -22,6 +22,6 @@ export default defineConfig({
         termos: 'termos-uso.html'
       }
     },
-    copyPublicDir: false
+    copyPublicDir: true
   }
 })

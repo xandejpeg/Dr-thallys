@@ -11,6 +11,9 @@ const TEXT_X = 540;
 // Recorte "peito para cima" na foto original de 4480x5600
 const CROP = { left: 728, top: 308, width: 2856, height: 3584 };
 
+// Vai para public/ porque a meta tag precisa de um nome de arquivo estável (o Vite não versiona esta pasta)
+const OUT = 'public/og-image.jpg';
+
 const photo = await sharp('assets/images/IMG_7031-Edit.jpg')
     .extract(CROP)
     .resize(PHOTO_W, H, { fit: 'cover', position: 'top' })
@@ -59,7 +62,7 @@ await sharp({ create: { width: W, height: H, channels: 3, background: BG } })
         { input: logo, top: H - 64 - 60, left: W - mark.info.width - 60 }
     ])
     .jpeg({ quality: 88, mozjpeg: true, chromaSubsampling: '4:4:4' })
-    .toFile('assets/images/og-image.jpg');
+    .toFile(OUT);
 
-const out = await sharp('assets/images/og-image.jpg').metadata();
-console.log(`og-image.jpg ${out.width}x${out.height} ${(out.size / 1024).toFixed(1)} KB`);
+const out = await sharp(OUT).metadata();
+console.log(`${OUT} ${out.width}x${out.height}`);
