@@ -4,7 +4,6 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
-    initPreloader();
     initNavigation();
     initScrollEffects();
     initFAQ();
@@ -13,33 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initCtaTracking();
     setCurrentYear();
 });
-
-/* ============================================
-   PRELOADER
-   ============================================ */
-function initPreloader() {
-    const preloader = document.getElementById('preloader');
-    const heroImg = document.querySelector('.hero__bg img');
-    
-    function hidePreloader() {
-        if (preloader._hidden) return;
-        preloader._hidden = true;
-        preloader.classList.add('hidden');
-        setTimeout(function() {
-            preloader.style.display = 'none';
-        }, 500);
-    }
-    
-    // Hide as soon as hero image is ready (or after 800ms max, para não atrasar o LCP)
-    if (heroImg && heroImg.complete) {
-        hidePreloader();
-    } else if (heroImg) {
-        heroImg.addEventListener('load', hidePreloader);
-        setTimeout(hidePreloader, 800);
-    } else {
-        setTimeout(hidePreloader, 300);
-    }
-}
 
 /* ============================================
    NAVIGATION
